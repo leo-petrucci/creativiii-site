@@ -25,6 +25,7 @@ jobs:
       - name: Setting our secret token
         with:
           token: ${{ secrets.SYNC_SCRIPT_TOKEN }}
+        run: echo $token
       - name: The job has succeeded
         if: ${{ success() }}
         run: echo "test"
