@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rsync -r -a --remove-source-files build/* /var/www/html",
+    "build": "react-scripts build",
+    "copy": "rsync -r -a --remove-source-files build/* /var/www/html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
