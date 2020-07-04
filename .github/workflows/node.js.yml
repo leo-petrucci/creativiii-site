@@ -26,7 +26,7 @@ jobs:
         with:
           token: ${{ secrets.SYNC_SCRIPT_TOKEN }}
         if: ${{ success() }}
-        run: curl -X GET http://creativiii.com/deploy.php -H 'Authorization: $token' 
+        run: echo "test"
       - name: The job has failed
         if: ${{ failure() }}
         run: echo "Failure"
