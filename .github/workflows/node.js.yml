@@ -13,6 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.SYNC_SCRIPT_TOKEN }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -23,8 +25,6 @@ jobs:
         env:
           CI: true
       - name: Setting our secret token
-        with:
-          token: ${{ secrets.SYNC_SCRIPT_TOKEN }}
         run: echo $token
       - name: The job has succeeded
         if: ${{ success() }}
