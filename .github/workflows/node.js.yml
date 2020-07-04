@@ -22,10 +22,11 @@ jobs:
       - run: npm test
         env:
           CI: true
-      - name: Setting our secret token
-        with:
-          token: ${{ secrets.SYNC_SCRIPT_TOKEN }}
-        run: echo "$token"
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.SYNC_SCRIPT_TOKEN }}
+        run: |
+          example-command "$SUPER_SECRET"
       - name: The job has succeeded
         if: ${{ success() }}
         run: echo "test"
